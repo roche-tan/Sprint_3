@@ -1,0 +1,21 @@
+{
+  "name": "sprint_3",
+  "version": "1.0.0",
+  "description": "node project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "start": "tsc",
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/inquirer": "9.0.6",
+    "@types/jest": "^29.5.6",
+    "@types/typescript": "2.0.0",
+    "jest": "^29.7.0"
+  }
+}
