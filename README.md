@@ -19,15 +19,10 @@ A Node.js package that contains a series of workshop lessons which teachES you t
 
 ### Usage
 
-- To run Jest tests:
-
-    `npm test`
-
-
 - To manually transpile from Typescript to Javascript:
 
     `npm start`
-    
-- To run CLI with inquirer:
+  
+- To run Jest tests:
 
-    `npm run cli`
+    `npm test`
