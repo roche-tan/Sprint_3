@@ -1,5 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.processArgs = exports.babySteps = void 0;
 // (...arg) To accept an indefinite number of arguments
-export var babySteps = function () {
+var babySteps = function () {
     var args = [];
     for (var _i = 0; _i < arguments.length; _i++) {
         args[_i] = arguments[_i];
@@ -15,9 +18,11 @@ export var babySteps = function () {
     }
     return resultSum;
 };
-export var processArgs = function (argv) {
+exports.babySteps = babySteps;
+var processArgs = function (argv) {
     //slice(2) - Take elements from argv[1] on
     return argv.slice(2).map(function (arg) { return parseFloat(arg); });
 };
-var args = processArgs(process.argv);
-console.log(babySteps.apply(void 0, args));
+exports.processArgs = processArgs;
+var args = (0, exports.processArgs)(process.argv);
+console.log(exports.babySteps.apply(void 0, args));

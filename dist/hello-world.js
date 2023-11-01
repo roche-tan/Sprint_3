@@ -1,4 +1,7 @@
-export var log = function (message) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.log = void 0;
+var log = function (message) {
     if (message === "") {
         throw new Error("Message is empty");
     }
@@ -7,4 +10,5 @@ export var log = function (message) {
     }
     console.log("HELLO WORLD");
 };
-log("HELLO WORLD");
+exports.log = log;
+(0, exports.log)("HELLO WORLD");
