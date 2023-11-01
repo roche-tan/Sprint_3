@@ -7,4 +7,4 @@ export var log = function (message) {
     }
     console.log("HELLO WORLD");
 };
-// log("HELLO WORLD");
+log("HELLO WORLD");
