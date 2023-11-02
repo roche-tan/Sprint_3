@@ -28,10 +28,9 @@ describe("my-first-io", () => {
     fs.unlinkSync(testFilePath);
   });
 
-  // it("Should throw an error if no valid file path is provided", () => {
-  //   // O si quieres probar con un string vacío
-  //   expect(() => countLines("")).toThrow(
-  //     "No se ha proporcionado un path de archivo válido."
-  //   );
-  // });
+  it("Should throw an error if no valid file path is provided", () => {
+    expect(() => countLines("")).toThrow(
+      "No se ha proporcionado un path de archivo válido."
+    );
+  });
 });
