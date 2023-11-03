@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.log = void 0;
-var log = function (message) {
+const log = (message) => {
     if (message === "") {
         throw new Error("Message is empty");
     }
@@ -12,3 +12,4 @@ var log = function (message) {
 };
 exports.log = log;
 (0, exports.log)("HELLO WORLD");
+//# sourceMappingURL=hello-world.js.map
