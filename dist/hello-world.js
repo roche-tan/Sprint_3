@@ -12,4 +12,3 @@ const log = (message) => {
 };
 exports.log = log;
 (0, exports.log)("HELLO WORLD");
-//# sourceMappingURL=hello-world.js.map

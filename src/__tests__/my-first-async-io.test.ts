@@ -30,7 +30,7 @@ describe("Count Lines Async", () => {
   it("throws an error when the file does not exist", async () => {
     mockedReadFile.mockRejectedValue(new Error("File not found"));
     const filename: string = "nonexistent.txt";
-
+  
     await expect(countLinesAsync(filename)).rejects.toThrow("File not found");
   });
 });

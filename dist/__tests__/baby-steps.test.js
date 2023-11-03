@@ -32,4 +32,3 @@ describe("processArgs function", () => {
         expect(processedArgs).toEqual([1, 2, 3]);
     });
 });
-//# sourceMappingURL=baby-steps.test.js.map

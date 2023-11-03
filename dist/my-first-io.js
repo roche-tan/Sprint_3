@@ -50,4 +50,3 @@ exports.default = countLines;
 // // }
 // // const pathFile = process.argv[2];
 // console.log(countLines(pathFile));
-//# sourceMappingURL=my-first-io.js.map

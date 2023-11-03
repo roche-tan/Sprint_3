@@ -40,4 +40,3 @@ describe("Count Lines Async", () => {
         yield expect((0, my_first_async_io_1.default)(filename)).rejects.toThrow("File not found");
     }));
 });
-//# sourceMappingURL=my-first-async-io.test.js.map

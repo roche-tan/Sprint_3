@@ -22,4 +22,3 @@ const processArgs = (argv) => {
 exports.processArgs = processArgs;
 const args = (0, exports.processArgs)(process.argv);
 console.log((0, exports.babySteps)(...args));
-//# sourceMappingURL=baby-steps.js.map

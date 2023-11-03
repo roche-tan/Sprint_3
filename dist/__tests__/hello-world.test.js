@@ -19,4 +19,3 @@ describe("Print hello world in console", () => {
         expect(consoleSpy).toHaveBeenCalledWith("HELLO WORLD");
     });
 });
-//# sourceMappingURL=hello-world.test.js.map
