@@ -21,7 +21,7 @@ jest.mock("fs", () => ({
 }));
 // You may have to cast the mocked function to the correct type
 const mockedReadFile = fs_1.promises.readFile;
-describe("countLines", () => {
+describe("Count Lines Async", () => {
     it("counts the number of lines correctly", () => __awaiter(void 0, void 0, void 0, function* () {
         mockedReadFile.mockResolvedValue(Buffer.from("Line1\nLine2\nLine3\n"));
         const filename = "test.txt";

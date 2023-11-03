@@ -10,7 +10,7 @@ jest.mock("fs", () => {
         readFileSync: jest.fn(() => Buffer.from("Line1\nLine2\nLine3\n")),
     };
 });
-describe("countLines", () => {
+describe("Count Lines", () => {
     it("counts the number of lines correctly", () => {
         const filename = "test.txt";
         const lineCount = (0, my_first_io_1.default)(filename);

@@ -5,6 +5,9 @@ const countLines = (filename: string): number => {
   const lines = contents.toString().split("\n").length - 1;
   return lines;
 };
+const pathFile = process.argv[2];
+console.log(countLines(pathFile));
+
 export default countLines;
 // --------------------------------------------
 

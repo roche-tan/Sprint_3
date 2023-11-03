@@ -9,6 +9,8 @@ const countLines = (filename) => {
     const lines = contents.toString().split("\n").length - 1;
     return lines;
 };
+const pathFile = process.argv[2];
+console.log(countLines(pathFile));
 exports.default = countLines;
 // --------------------------------------------
 // // Imports module from Node. Allows to interact with file system.
