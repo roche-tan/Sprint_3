@@ -1,15 +1,15 @@
 import * as fs from "fs";
 import * as path from "path";
 
-export const myModule = async (
+const myModule = (
   directory: string,
   extension: string,
   callback: (error: Error | null, list: string[]) => void
-): Promise<void> => {
+): void => {
   try {
     fs.readdir(directory, (error, files) => {
       if (error) {
-        callback(error, []);
+        return callback(error, []);
       }
       const filteredFiles = files.filter(
         (file: string) => path.extname(file) === "." + extension
@@ -20,3 +20,5 @@ export const myModule = async (
     callback(error, []);
   }
 };
+
+module.exports = myModule;
