@@ -1,9 +1,10 @@
 import { filteredLs } from "../filtered-ls";
 
 import * as fs from "fs";
-import * as path from "path";
+// import * as path from "path";
 
-// Mock the fs module
+// Mock the all fs module. In this case is simulating the promise property. This mock function is used to as test-directory
+// jest.fn() only mocks a unic function.
 jest.mock("fs", () => {
   return {
     promises: {
@@ -12,6 +13,7 @@ jest.mock("fs", () => {
   };
 });
 
+// variable to easier manage of the jest mock function. This calls a simulated readdir function created by jest.mock()
 const mockedFsReaddir = fs.promises.readdir as unknown as jest.Mock;
 
 describe("filteredLs", () => {
@@ -22,10 +24,11 @@ describe("filteredLs", () => {
 
   it("Should print the list of files to the console", async () => {
     const mockFiles = ["file1.txt", "file2.js", "file3.txt"];
-    // Mock readdir implementation to return mockFiles
+
+    // Mock readdir implementation to return mockFiles. mockResolvedValue() is a jest function that specify the value that shoud return the mock function
     mockedFsReaddir.mockResolvedValue(mockFiles);
 
-    // Spy on console.log to check if it gets called correctly
+    // Spy on console, "log" to check if it gets called correctly
     const consoleSpy = jest.spyOn(console, "log");
 
     // Call the function with the directory and extension
