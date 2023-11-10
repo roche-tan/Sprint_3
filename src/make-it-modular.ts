@@ -1,14 +1,14 @@
 const myModule = require("./mymodule");
 
-const directory = process.argv[2];
-const extension = process.argv[3];
+const directory = process.argv[2]; //takes third argument
+const extension = process.argv[3]; //takes fourth argument
 
-// callint myModule function instead of calling it in myModules.ts
+// calling myModule function instead of calling it in myModules.ts
 myModule(directory, extension, (error: any, files: string[]) => {
-  if (error) {
+  if (error) { //if error, prints error
     console.error("Error: ", error);
     return;
-  } else {
+  } else {// if no error, prints files with extension
     files.forEach((file: string) => {
       console.log(file);
     });
