@@ -1,4 +1,4 @@
-const http = require("http");
+import * as http from 'http';
 
 const url = process.argv[2];
 // const url = "http://example.com/";
