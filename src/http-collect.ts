@@ -1,22 +1,9 @@
-import * as http from 'http';
+import { fetchData } from "./http-collect-main";
 
 const url = process.argv[2];
-// const url = "http://example.com/";
 
-http
-  .get(url, (response: any) => {
-    let data = "";
-
-    response.on("data", (chunk: string) => {
-      data += chunk;
-    });
-
-    response.on("end", () => {
-      console.log(data.length);
-      console.log(data);
-    });
-  })
-  .on("error", (error: Error) => {
-    // error
-    console.error("Request error: ", error);
+fetchData(url)
+  // Data is being printed directly in fetch data. so there is no need to do anything else
+  .catch((error) => {
+    console.log(error);
   });
