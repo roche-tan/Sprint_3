@@ -9,7 +9,7 @@ http
   .get(url, (response: any) => {
     response.setEncoding("utf8"); //set response to string
     response.on("data", (chunk: string) => {
-      //listen for data events and print them in parts (chunk)
+      //listen for data events and print them in parts (chunk). Not recomended to manage large data as it is processed in "chunks"
       console.log(chunk);
     });
     response.on("error", (error: Error) => {
