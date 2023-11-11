@@ -1,4 +1,4 @@
-const http = require("http");
+import http from 'http'
 
 // const url_1 = process.argv[2];
 // const url_2 = process.argv[3];

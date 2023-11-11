@@ -1,5 +1,9 @@
 "use strict";
-const http = require("http");
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const http_1 = __importDefault(require("http"));
 // const url_1 = process.argv[2];
 // const url_2 = process.argv[3];
 // const url_3 = process.argv[4];
@@ -14,7 +18,7 @@ let results = new Array(urls.length);
 let requestsDone = 0;
 urls.forEach((url, index) => {
     //loop to iterate in each url
-    http
+    http_1.default
         .get(url, (response) => {
         let data = "";
         response.on("data", (chunk) => {
