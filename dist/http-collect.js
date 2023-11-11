@@ -1,6 +1,5 @@
 "use strict";
 const http = require("http");
-// const bl = require("bl");
 const url = process.argv[2];
 // const url = "http://example.com/";
 http
@@ -9,8 +8,9 @@ http
     response.on("data", (chunk) => {
         data += chunk;
     });
-    response.on("error", (error) => {
-        console.error("Response error: ", error);
+    response.on("end", () => {
+        console.log(data.length);
+        console.log(data);
     });
 })
     .on("error", (error) => {
