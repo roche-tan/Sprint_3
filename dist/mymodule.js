@@ -23,19 +23,21 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs = __importStar(require("fs"));
-const path = __importStar(require("path"));
+const fs = __importStar(require("fs")); // to work with files system
+const path = __importStar(require("path")); //to work with files and directories path
 const myModule = (directory, extension, callback) => {
     try {
         fs.readdir(directory, (error, files) => {
             if (error) {
                 return callback(error, []);
             }
+            //fileters files according to the extension
             const filteredFiles = files.filter((file) => path.extname(file) === "." + extension);
+            //calls callback if there is error
             callback(null, filteredFiles);
         });
     }
-    catch (error) {
+    catch (error) { //if there is an excepmtion, it calls callback
         callback(error, []);
     }
 };
