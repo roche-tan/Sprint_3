@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createFileServer = void 0;
-// const http = require("http"); If used, type of req & res cannot be used
+// const http = require("http"); //If used, type of req & res cannot be used
 // const fs = require("fs");
 const http = __importStar(require("http"));
 const fs = __importStar(require("fs"));

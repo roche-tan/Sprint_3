@@ -1,6 +1,7 @@
 // const http = require("http"); If used, type of req & res cannot be used
 
-import { createFileServer } from "./http-file-server-main";
+// import { createFileServer } from "./http-file-server-main";
+const { createFileServer } = require("./http-file-server-main");
 
 const port = process.argv[2];
 const file = process.argv[3];

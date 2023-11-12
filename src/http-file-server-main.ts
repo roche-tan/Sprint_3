@@ -1,4 +1,4 @@
-// const http = require("http"); If used, type of req & res cannot be used
+// const http = require("http"); //If used, type of req & res cannot be used
 // const fs = require("fs");
 import * as http from "http";
 import * as fs from "fs";
@@ -12,4 +12,3 @@ export const createFileServer = (file: string) => {
     }
   );
 };
-
