@@ -9,7 +9,9 @@ jest.mock("net", () => {
     }),
   };
 });
-
+jest.mock("./time-server-main", () => ({
+  getFormatDate: jest.fn().mockReturnValue("2023-04-10 15:30"),
+}));
 describe("getFormatDate", () => {
   beforeAll(() => {
     jest.useFakeTimers(); // Use Jest's modern fake timers
@@ -26,41 +28,40 @@ describe("getFormatDate", () => {
   });
 });
 
-describe("Time Server", () => {
+describe("time-server", () => {
   let testServer: net.Server;
-  let testPort = 0; // Use 0 for the operating system to assign an arbitrary available port
+  let testPort: number = 0;
 
-  // Start the server before all tests
   beforeAll((done) => {
-    testServer = server.listen(testPort, () => {
-      testPort = (testServer.address() as net.AddressInfo).port;
+    // Inicializar el servidor en un puerto aleatorio
+    testServer = server.listen(0, () => {
+      const address = testServer.address() as net.AddressInfo;
       done();
     });
-  }, 10000); // Increase the timeout to 10 seconds
-
-  // Close the server after all tests
-  afterAll((done) => {
-    if (testServer) {
-      testServer.close(done);
-    } else {
-      done(); // If testServer is undefined, just call done
-    }
   });
 
-  // Test case
-  it("should send the current date and time in YYYY-MM-DD HH:mm format", (done) => {
-    // Connect to the server
+  afterAll((done) => {
+    // Cerrar el servidor después de las pruebas
+    testServer.close(done);
+  });
+
+  it("should send formatted date and time and close the connection", (done) => {
     const client = net.createConnection({ port: testPort }, () => {
+      let receivedData = "";
+
       client.on("data", (data) => {
-        // Check if the data matches the expected format
-        expect(data.toString()).toMatch(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}\n$/);
-        client.end(); // Close the client connection
-        done(); // Finish the test
+        receivedData += data.toString();
+      });
+
+      client.on("end", () => {
+        // Verificar que los datos recibidos coinciden con el mock de getFormatDate
+        expect(receivedData).toBe("2023-04-10 15:30\n");
+        done();
       });
     });
 
     client.on("error", (err) => {
-      done(err); // Handle connection errors
+      done(err);
     });
   });
 });

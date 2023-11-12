@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699800216454" clover="3.2.0">
-  <project timestamp="1699800216454" name="All files">
-    <metrics statements="385" coveredstatements="370" conditionals="199" coveredconditionals="147" methods="114" coveredmethods="106" elements="698" coveredelements="623" complexity="0" loc="385" ncloc="385" packages="2" files="24" classes="24"/>
+<coverage generated="1699801772044" clover="3.2.0">
+  <project timestamp="1699801772045" name="All files">
+    <metrics statements="331" coveredstatements="325" conditionals="164" coveredconditionals="126" methods="104" coveredmethods="100" elements="599" coveredelements="551" complexity="0" loc="331" ncloc="331" packages="2" files="20" classes="20"/>
     <package name="dist">
-      <metrics statements="243" coveredstatements="231" conditionals="179" coveredconditionals="127" methods="72" coveredmethods="65"/>
+      <metrics statements="205" coveredstatements="199" conditionals="144" coveredconditionals="106" methods="64" coveredmethods="60"/>
       <file name="baby-steps.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\baby-steps.js">
         <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
@@ -239,53 +239,9 @@
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
       </file>
-      <file name="time-server-main.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\time-server-main.js">
-        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-      </file>
-      <file name="time-server.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\time-server.js">
-        <metrics statements="27" coveredstatements="21" conditionals="35" coveredconditionals="21" methods="7" coveredmethods="4"/>
-        <line num="2" count="1" type="cond" truecount="3" falsecount="2"/>
-        <line num="3" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="cond" truecount="5" falsecount="3"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="1" type="cond" truecount="3" falsecount="2"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="18" count="1" type="cond" truecount="2" falsecount="1"/>
-        <line num="19" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="cond" truecount="4" falsecount="2"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-      </file>
     </package>
     <package name="src">
-      <metrics statements="142" coveredstatements="139" conditionals="20" coveredconditionals="20" methods="42" coveredmethods="41"/>
+      <metrics statements="126" coveredstatements="126" conditionals="20" coveredconditionals="20" methods="40" coveredmethods="40"/>
       <file name="baby-steps.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\baby-steps.ts">
         <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
@@ -441,28 +397,6 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-      </file>
-      <file name="time-server-main.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\time-server-main.ts">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-      </file>
-      <file name="time-server.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\time-server.ts">
-        <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
       </file>
     </package>
   </project>
