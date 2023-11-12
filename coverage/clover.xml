@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699802301104" clover="3.2.0">
-  <project timestamp="1699802301104" name="All files">
-    <metrics statements="331" coveredstatements="325" conditionals="164" coveredconditionals="126" methods="104" coveredmethods="100" elements="599" coveredelements="551" complexity="0" loc="331" ncloc="331" packages="2" files="20" classes="20"/>
+<coverage generated="1699809698367" clover="3.2.0">
+  <project timestamp="1699809698367" name="All files">
+    <metrics statements="372" coveredstatements="361" conditionals="202" coveredconditionals="150" methods="116" coveredmethods="110" elements="690" coveredelements="621" complexity="0" loc="372" ncloc="372" packages="2" files="22" classes="22"/>
     <package name="dist">
-      <metrics statements="205" coveredstatements="199" conditionals="144" coveredconditionals="106" methods="64" coveredmethods="60"/>
+      <metrics statements="234" coveredstatements="224" conditionals="181" coveredconditionals="129" methods="73" coveredmethods="67"/>
       <file name="baby-steps.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\baby-steps.js">
         <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
@@ -239,9 +239,41 @@
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
       </file>
+      <file name="mymodule.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\mymodule.js">
+        <metrics statements="29" coveredstatements="25" conditionals="37" coveredconditionals="23" methods="9" coveredmethods="7"/>
+        <line num="2" count="1" type="cond" truecount="3" falsecount="2"/>
+        <line num="3" count="114" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="114" type="stmt"/>
+        <line num="5" count="114" type="cond" truecount="5" falsecount="3"/>
+        <line num="6" count="114" type="stmt"/>
+        <line num="8" count="114" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="3" falsecount="2"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="2" falsecount="1"/>
+        <line num="19" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="114" type="cond" truecount="4" falsecount="2"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="32" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+      </file>
     </package>
     <package name="src">
-      <metrics statements="126" coveredstatements="126" conditionals="20" coveredconditionals="20" methods="40" coveredmethods="40"/>
+      <metrics statements="138" coveredstatements="137" conditionals="21" coveredconditionals="21" methods="43" coveredmethods="43"/>
       <file name="baby-steps.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\baby-steps.ts">
         <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
@@ -397,6 +429,21 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
+      </file>
+      <file name="mymodule.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\mymodule.ts">
+        <metrics statements="12" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
       </file>
     </package>
   </project>

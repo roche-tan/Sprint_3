@@ -28,6 +28,7 @@ const path = __importStar(require("path")); //to work with files and directories
 const myModule = (directory, extension, callback) => {
     try {
         fs.readdir(directory, (error, files) => {
+            // reads the content f the directory and proceeds if there are no errors. If errors, jumps to callback
             if (error) {
                 return callback(error, []);
             }
@@ -37,7 +38,8 @@ const myModule = (directory, extension, callback) => {
             callback(null, filteredFiles);
         });
     }
-    catch (error) { //if there is an excepmtion, it calls callback
+    catch (error) {
+        //if there is an excepmtion, it calls callback
         callback(error, []);
     }
 };
