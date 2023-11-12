@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699787351645" clover="3.2.0">
-  <project timestamp="1699787351645" name="All files">
-    <metrics statements="307" coveredstatements="292" conditionals="165" coveredconditionals="117" methods="96" coveredmethods="88" elements="568" coveredelements="497" complexity="0" loc="307" ncloc="307" packages="2" files="20" classes="20"/>
+<coverage generated="1699799915478" clover="3.2.0">
+  <project timestamp="1699799915478" name="All files">
+    <metrics statements="385" coveredstatements="370" conditionals="199" coveredconditionals="147" methods="114" coveredmethods="106" elements="698" coveredelements="623" complexity="0" loc="385" ncloc="385" packages="2" files="24" classes="24"/>
     <package name="dist">
-      <metrics statements="199" coveredstatements="187" conditionals="155" coveredconditionals="107" methods="62" coveredmethods="55"/>
+      <metrics statements="243" coveredstatements="231" conditionals="179" coveredconditionals="127" methods="72" coveredmethods="65"/>
       <file name="baby-steps.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\baby-steps.js">
         <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
@@ -149,6 +149,56 @@
         <line num="35" count="2" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
       </file>
+      <file name="http-json-api-server-main.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\http-json-api-server-main.js">
+        <metrics statements="30" coveredstatements="30" conditionals="15" coveredconditionals="13" methods="6" coveredmethods="6"/>
+        <line num="2" count="1" type="cond" truecount="2" falsecount="1"/>
+        <line num="3" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="36" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+      </file>
+      <file name="http-uppercaserer-main.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\http-uppercaserer-main.js">
+        <metrics statements="14" coveredstatements="14" conditionals="9" coveredconditionals="7" methods="4" coveredmethods="4"/>
+        <line num="2" count="1" type="cond" truecount="2" falsecount="1"/>
+        <line num="3" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+      </file>
       <file name="juggling-async-main.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\juggling-async-main.js">
         <metrics statements="23" coveredstatements="23" conditionals="9" coveredconditionals="7" methods="9" coveredmethods="9"/>
         <line num="2" count="1" type="cond" truecount="2" falsecount="1"/>
@@ -235,7 +285,7 @@
       </file>
     </package>
     <package name="src">
-      <metrics statements="108" coveredstatements="105" conditionals="10" coveredconditionals="10" methods="34" coveredmethods="33"/>
+      <metrics statements="142" coveredstatements="139" conditionals="20" coveredconditionals="20" methods="42" coveredmethods="41"/>
       <file name="baby-steps.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\baby-steps.ts">
         <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
@@ -319,6 +369,46 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
+      </file>
+      <file name="http-json-api-server-main.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\http-json-api-server-main.ts">
+        <metrics statements="25" coveredstatements="25" conditionals="8" coveredconditionals="8" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="35" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+      </file>
+      <file name="http-uppercaserer-main.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\http-uppercaserer-main.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
       </file>
       <file name="juggling-async-main.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\juggling-async-main.ts">
         <metrics statements="18" coveredstatements="18" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="8"/>
