@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699743004638" clover="3.2.0">
-  <project timestamp="1699743004638" name="All files">
-    <metrics statements="153" coveredstatements="150" conditionals="85" coveredconditionals="66" methods="45" coveredmethods="43" elements="283" coveredelements="259" complexity="0" loc="153" ncloc="153" packages="2" files="10" classes="10"/>
+<coverage generated="1699780669779" clover="3.2.0">
+  <project timestamp="1699780669780" name="All files">
+    <metrics statements="182" coveredstatements="179" conditionals="85" coveredconditionals="66" methods="59" coveredmethods="57" elements="326" coveredelements="302" complexity="0" loc="182" ncloc="182" packages="2" files="12" classes="12"/>
     <package name="dist">
-      <metrics statements="97" coveredstatements="94" conditionals="76" coveredconditionals="57" methods="30" coveredmethods="28"/>
+      <metrics statements="113" coveredstatements="110" conditionals="76" coveredconditionals="57" methods="37" coveredmethods="35"/>
       <file name="baby-steps.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\baby-steps.js">
         <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
@@ -102,6 +102,25 @@
         <line num="25" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
       </file>
+      <file name="http-collect-main.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\http-collect-main.js">
+        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+      </file>
       <file name="my-first-io.js" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\dist\my-first-io.js">
         <metrics statements="11" coveredstatements="11" conditionals="7" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="2" count="1" type="cond" truecount="2" falsecount="1"/>
@@ -118,7 +137,7 @@
       </file>
     </package>
     <package name="src">
-      <metrics statements="56" coveredstatements="56" conditionals="9" coveredconditionals="9" methods="15" coveredmethods="15"/>
+      <metrics statements="69" coveredstatements="69" conditionals="9" coveredconditionals="9" methods="22" coveredmethods="22"/>
       <file name="baby-steps.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\baby-steps.ts">
         <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
@@ -178,6 +197,22 @@
         <line num="16" count="2" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
+      </file>
+      <file name="http-collect-main.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\http-collect-main.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
       </file>
       <file name="my-first-io.ts" path="C:\Users\roche\Desktop\PROGRAMACION_ROCHE\1. ITACADEMY\SPRINT_3\src\my-first-io.ts">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
