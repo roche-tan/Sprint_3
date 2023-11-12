@@ -37,7 +37,7 @@ describe("HTTP GET Request", () => {
         });
         const data = yield (0, http_collect_main_1.fetchData)("http://example.com");
         expect(data).toEqual(mockChunks);
-    }), 7000);
+    }));
     it("should handle response error event", () => __awaiter(void 0, void 0, void 0, function* () {
         const mockError = new Error("Test response error");
         const mockResponse = {

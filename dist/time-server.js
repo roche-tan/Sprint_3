@@ -1,36 +1,26 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.server = void 0;
-const net = __importStar(require("net"));
-const time_server_main_1 = require("./time-server-main");
-// const net = require("net"); //with this approach not.Socket is not valid
+exports.server = exports.getFormatDate = void 0;
+const net_1 = __importDefault(require("net"));
+const getFormatDate = () => {
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = ("0" + (date.getMonth() + 1)).slice(-2);
+    let day = ("0" + date.getDate()).slice(-2);
+    let hours = ("0" + date.getHours()).slice(-2);
+    let minutes = ("0" + date.getMinutes()).slice(-2);
+    return `${year}-${month}-${day} ${hours}:${minutes}`;
+};
+exports.getFormatDate = getFormatDate;
 const port = process.argv[2];
-exports.server = net.createServer((socket) => {
-    let data = (0, time_server_main_1.getFormatDate)();
+exports.server = net_1.default.createServer((socket) => {
+    let data = (0, exports.getFormatDate)();
     socket.write(data + "\n");
     socket.end();
 });
-exports.server.listen(port);
+exports.server.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});

@@ -12,29 +12,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs_1 = require("fs");
 const my_first_async_io_1 = __importDefault(require("../my-first-async-io"));
-// You need to mock the entire 'fs' module including 'fs/promises'
-jest.mock("fs", () => {
-    return {
-        promises: {
-            readFile: jest.fn(),
-        },
-    };
-});
-const mockedReadFile = fs_1.promises.readFile;
-describe("Count Lines Async", () => {
-    it("counts the number of lines correctly", () => __awaiter(void 0, void 0, void 0, function* () {
-        // Setup the mock to return a promise that resolves to a Buffer
-        mockedReadFile.mockResolvedValue(Buffer.from("Line1\nLine2\nLine3\n"));
-        const filename = "test.txt";
-        const lineCount = yield (0, my_first_async_io_1.default)(filename);
-        expect(lineCount).toBe(3); // Since we have 3 lines followed by a new line
+const path_1 = __importDefault(require("path"));
+describe("countLinesAsync", () => {
+    it("counts the number of lines in a file", () => __awaiter(void 0, void 0, void 0, function* () {
+        const filePath = path_1.default.join(__dirname, "testfile.txt");
+        console.log(filePath);
+        const lineCount = yield (0, my_first_async_io_1.default)(filePath);
+        // Aquí, reemplaza 3 con el número de líneas que realmente tiene tu archivo de prueba.
+        expect(lineCount).toBe(3);
     }));
-    it("throws an error when the file does not exist", () => __awaiter(void 0, void 0, void 0, function* () {
-        // Setup the mock to simulate a file not found error
-        mockedReadFile.mockRejectedValue(new Error("File not found"));
-        const filename = "nonexistent.txt";
-        yield expect((0, my_first_async_io_1.default)(filename)).rejects.toThrow("File not found");
+    it("throws an error when the file cannot be read", () => __awaiter(void 0, void 0, void 0, function* () {
+        const filePath = path_1.default.join(__dirname, "nonexistent.txt");
+        // Espera que se lance una excepción cuando el archivo no existe.
+        yield expect((0, my_first_async_io_1.default)(filePath)).rejects.toThrow();
     }));
 });
