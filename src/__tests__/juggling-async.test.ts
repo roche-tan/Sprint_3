@@ -7,27 +7,27 @@ jest.mock("http", () => ({
 
 describe("fetchData", () => {
   beforeEach(() => {
-    (http.get as jest.Mock).mockImplementation((url, callback) => {
+    (http.get as jest.Mock).mockImplementation((url, callback) => { //mockImplementation jest method that is used to define a personalized implmentation to a mock function
       const mockResponse = {
         on: jest.fn((event, handler) => {
           if (event === "data") {
-            handler("some data"); // Simula recibir algunos datos
+            handler("some data"); // Simulates receiving some data
           }
           if (event === "end") {
-            handler(); // Simula el final de la recepción de datos
+            handler(); // Simulates the end of the data reception
           }
         }),
       };
 
       callback(mockResponse);
-      return { on: jest.fn() }; // Manejar el evento de error
+      return { on: jest.fn() }; // Returnting an object with property on. its value is a jest mock function
     });
   });
 
   it("should accumulate data from multiple URLs", async () => {
     const urls = ["http://example.com/1", "http://example.com/2"];
     const data = await fetchData(urls);
-    expect(data).toEqual(["some data", "some data"]); // Ajustar según lo que esperes recibir
+    expect(data).toEqual(["some data", "some data"]); 
   });
 
   it("should handle errors in HTTP requests", async () => {
@@ -56,7 +56,7 @@ describe("fetchData", () => {
       };
 
       callback(mockResponse);
-      return { on: jest.fn() }; //
+      return { on: jest.fn() };
     });
 
     const urls = ["http://example.com/1"];
