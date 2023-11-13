@@ -9,11 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs_1 = require("fs");
+const fs_1 = require("fs"); //imports the promise-based versions of functions from fs module.
 const countLinesAsync = (filename) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const contents = yield fs_1.promises.readFile(filename);
-        const lines = contents.toString().split("\n").length - 1;
+        const contents = yield fs_1.promises.readFile(filename); //reads the content of the file
+        const lines = contents.toString().split("\n").length - 1; //contents is converted to string and then separated by character \n and obtains length. -1 as last \n shows a new line but it is empty.
         return lines;
     }
     catch (error) {

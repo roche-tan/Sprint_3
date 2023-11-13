@@ -1,9 +1,9 @@
-import { promises as fsPromises } from "fs";
+import { promises as fsPromises } from "fs"; //imports the promise-based versions of functions from fs module.
 
 const countLinesAsync = async (filename: string): Promise<number> => {
   try {
-    const contents = await fsPromises.readFile(filename);
-    const lines = contents.toString().split("\n").length - 1;
+    const contents = await fsPromises.readFile(filename); //reads the content of the file
+    const lines = contents.toString().split("\n").length - 1; //contents is converted to string and then separated by character \n and obtains length. -1 as last \n shows a new line but it is empty.
     return lines;
   } catch (error: any) {
     console.error("Error reading file:", error.message);
