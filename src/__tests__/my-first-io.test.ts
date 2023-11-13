@@ -2,6 +2,7 @@ import countLines from "../my-first-io";
 
 // Mock fs module
 jest.mock("fs", () => {
+  //mock file with 3 lines
   return {
     readFileSync: jest.fn(() => Buffer.from("Line1\nLine2\nLine3\n")),
   };
