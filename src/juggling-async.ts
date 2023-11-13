@@ -12,7 +12,7 @@ const urls = [process.argv[2], process.argv[3], process.argv[4]];
 
 //Save the possition of each url
 fetchData(urls)
-  .then((result) => {
+  .then((result) => {//when resolved, result is printed
     result.forEach((result) => console.log(result));
   })
   .catch((error) => {

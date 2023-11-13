@@ -1,7 +1,7 @@
 import http from "http";
 export const fetchData = (urls: string[]): Promise<string[]> => {
   //Save the possition of each url
-  let results: string[] = new Array(urls.length);
+  let results: string[] = new Array(urls.length); //urls.length ensures that the results array will have the same length as urls.
 
   //Count how many requests have been done. in this case should be 3
   let requestsDone = 0;
