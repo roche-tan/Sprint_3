@@ -41,8 +41,7 @@ const filteredLs = (directory, extension) => __awaiter(void 0, void 0, void 0, f
         throw new Error("No extension provided");
     }
     try {
-        // readdir is used to read content in a directory
-        const files = yield fs_1.promises.readdir(directory);
+        const files = yield fs_1.promises.readdir(directory); // readdir to read content in a directory
         if (Array.isArray(files)) {
             //make sure files is an array
             files.forEach((file) => {
