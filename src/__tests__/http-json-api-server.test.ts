@@ -1,26 +1,26 @@
 import { createHttpServer } from "../http-json-api-server-main";
 import supertest from "supertest";
 
-// Configura un servidor HTTP para las pruebas
+// Configs HTTP server fot the tests
 const server = createHttpServer();
-const port = 3000; // Puerto de prueba
+const port = 3000; 
 
-beforeAll(() => {
+beforeAll(() => { //jest setup hook that runs before all tests. It starts the server on the specified port.
   server.listen(port);
 });
 
-afterAll(() => {
+afterAll(() => {//jest hook that runs after all tests have completed. It closes the server to clean up resources.
   server.close();
 });
 
 describe("HTTP JSON API Server Tests", () => {
-  it("should respond with correct JSON for /api/parsetime", async () => {
-    const response = await supertest(server)
-      .get("/api/parsetime?iso=2023-11-12T12:34:56.789Z")
+  it("should respond with correct JSON for /api/parsetime", async () => { 
+    const response = await supertest(server)//initializes Supertest with the server under test.
+      .get("/api/parsetime?iso=2023-11-12T12:34:56.789Z") // sends a GET request to the server to the specified endpoint (/api/parsetime) with a query string containing an ISO-formatted date-time string.
       .expect(200)
-      .expect("Content-Type", /json/);
+      .expect("Content-Type", /json/); // header of the response to indicate a JSON format
 
-    // Verifica que la respuesta tenga la estructura esperada
+    // Verifies response to have same estrucure
     expect(response.body).toEqual({ hour: 13, minute: 34, second: 56 });
   });
 
@@ -30,7 +30,7 @@ describe("HTTP JSON API Server Tests", () => {
       .expect(200)
       .expect("Content-Type", /json/);
 
-    // Ajusta la prueba para coincidir con la hora actual del servidor (13)
+    // Addjust the test Equal to actual time in server
     expect(response.body).toEqual({ hour: 13, minute: 34, second: 56 });
   });
 
@@ -40,7 +40,7 @@ describe("HTTP JSON API Server Tests", () => {
       .expect(200)
       .expect("Content-Type", /json/);
 
-    // Verifica que la respuesta tenga la estructura esperada
+    // Verifies respone to have the same structure
     expect(response.body).toEqual({ unixtime: expect.any(Number) });
   });
 
