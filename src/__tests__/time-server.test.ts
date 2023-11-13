@@ -2,9 +2,9 @@
 import { getFormatDate } from "../time-server";
 
 
-jest.mock("net", () => {
+jest.mock("net", () => { //jest mock function. it is mocking net module
   return {
-    createServer: jest.fn().mockReturnValue({
+    createServer: jest.fn().mockReturnValue({ //createServer mock function. returns a mock object with listen property
       listen: jest.fn(),
     }),
   };
