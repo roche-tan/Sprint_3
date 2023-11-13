@@ -78,9 +78,9 @@ describe("filteredLs", () => {
         const consoleError = jest.spyOn(console, "error");
         // Attempt to call the function with the directory and extension. We don't need to await the rejection because we are not testing the throw itself, but the console.error call
         (0, filtered_ls_1.filteredLs)("./", ".txt").catch((error) => { });
-        // Wait for all promises to resolve
+        // Wait for promises to resolve
         yield new Promise(setImmediate);
-        // Check if console.error was called with the correct error message
+        // Check if console.error was called error message
         expect(consoleError).toHaveBeenCalledWith("Error reading directory:", expect.any(Error));
         // Clean up the spy afterwards
         consoleError.mockRestore();

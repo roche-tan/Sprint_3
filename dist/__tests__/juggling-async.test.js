@@ -58,12 +58,12 @@ describe("fetchData", () => {
             const mockResponse = {
                 on: jest.fn((event, handler) => {
                     if (event === "error") {
-                        handler(new Error("Response error")); // Simular un error en la respuesta HTTP
+                        handler(new Error("Response error")); // Simulate an error as a response to HTTP
                     }
                 }),
             };
             callback(mockResponse);
-            return { on: jest.fn() }; // Manejar el evento de error en la solicitud
+            return { on: jest.fn() }; //
         });
         const urls = ["http://example.com/1"];
         yield expect((0, juggling_async_main_1.fetchData)(urls)).rejects.toThrow("Response error");
