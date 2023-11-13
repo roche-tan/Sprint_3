@@ -7,7 +7,7 @@ exports.fetchData = void 0;
 const http_1 = __importDefault(require("http"));
 const fetchData = (urls) => {
     //Save the possition of each url
-    let results = new Array(urls.length);
+    let results = new Array(urls.length); //urls.length ensures that the results array will have the same length as urls.
     //Count how many requests have been done. in this case should be 3
     let requestsDone = 0;
     return new Promise((resolve, reject) => {
