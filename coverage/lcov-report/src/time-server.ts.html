@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.47% </span>
+                <span class="strong">68.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/17</span>
+                <span class='fraction'>13/19</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/16</span>
+                <span class='fraction'>12/18</span>
             </div>
         
             
@@ -88,22 +88,31 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -111,9 +120,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import net from "net";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*Create a TCP (Transmission Control Protocol) server in Node.js that listens on a port provided as an argument, sending the current date and time in the "YYYY-MM-DD hh:mm" format to each connecting client, and then closes the connection.*/
+&nbsp;
+import net from "net";
 &nbsp;
 export const getFormatDate = (): string =&gt; {
   let date = new Date();
@@ -129,13 +143,17 @@ export const getFormatDate = (): string =&gt; {
 const port = process.argv[2];
 &nbsp;
 export const server = net.createServer(<span class="fstat-no" title="function not covered" >(s</span>ocket: net.Socket) =&gt; {
+  //net.createServer method creates a new TCP or IPC server. Called everytime user connects to the server
   let data = <span class="cstat-no" title="statement not covered" >getFormatDate();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  socket.write(data + "\n");</span>
-<span class="cstat-no" title="statement not covered" >  socket.end();</span>
+<span class="cstat-no" title="statement not covered" >  socket.write(data + "\n"); </span>//writes the formatted date and time string to the socket
+<span class="cstat-no" title="statement not covered" >  socket.end(); </span>//closing connection
 });
 &nbsp;
 server.listen(port, <span class="fstat-no" title="function not covered" >() =</span>&gt; {
+  //listen for the connections on a specific port
+  let data = <span class="cstat-no" title="statement not covered" >getFormatDate();</span>
+<span class="cstat-no" title="statement not covered" >  console.log(data);</span>
 <span class="cstat-no" title="statement not covered" >  console.log(`Server listening on port ${port}`);</span>
 });
 &nbsp;</pre></td></tr></table></pre>
@@ -145,7 +163,7 @@ server.listen(port, <span class="fstat-no" title="function not covered" >() =</s
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T19:24:20.447Z
+                at 2023-11-13T15:30:03.712Z
             </div>
         <script src="../prettify.js"></script>
         <script>

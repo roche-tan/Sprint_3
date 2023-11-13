@@ -5,7 +5,7 @@ export const babySteps = (...args: (number | null | undefined)[]): number => {
   let resultSum: number = 0;
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
-    if (args !== null && args !== undefined) {
+    if (arg !== null && arg !== undefined) {
       if (typeof arg !== "number" || isNaN(arg)) {
         throw new Error("Arguments must be numbers");
       }

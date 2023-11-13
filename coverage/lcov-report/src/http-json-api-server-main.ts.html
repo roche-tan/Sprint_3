@@ -114,10 +114,16 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,23 +131,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -165,12 +175,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import http from "http";
-import url from "url";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import http from "http"; //module to create hhtp
+import url from "url"; //module to analize request urls
 &nbsp;
 const parseTime = (time: Date) =&gt; {
+  // configures date time to return object with 3 properties
   return {
-    //returns an object with 3 properties
     hour: time.getHours(),
     minute: time.getMinutes(),
     second: time.getSeconds(),
@@ -178,14 +188,18 @@ const parseTime = (time: Date) =&gt; {
 };
 &nbsp;
 const unixTime = (time: Date) =&gt; {
+  //configures time to unix time
   return { unixtime: time.getTime() };
 };
 &nbsp;
 export const createHttpServer = () =&gt; {
   const parseQuery = (urlParsed: url.UrlWithParsedQuery) =&gt; {
+    //process entry requests
     if (urlParsed.pathname === "/api/parsetime") {
+      // if url is /api/parsetime returns parseTime
       return parseTime(new Date(urlParsed.query.iso as string));
     } else if (urlParsed.pathname === "/api/unixtime") {
+      //if url is /api/unixtime returns unixTime"
       return unixTime(new Date(urlParsed.query.iso as string));
     } else {
       return "Enter a valid endpoint";
@@ -193,19 +207,20 @@ export const createHttpServer = () =&gt; {
   };
 &nbsp;
   const server = http.createServer(
+    // create server
     (req: http.IncomingMessage, res: http.ServerResponse) =&gt; {
       if (req.method === "GET") {
-        const parsedUrl = url.parse(req.url as string, true);
+        const parsedUrl = url.parse(req.url as string, true); //url is a module. parse to get the url of the request as a string. true is used to convert it to object so the values are accessible
 &nbsp;
         const result = parseQuery(parsedUrl);
 &nbsp;
         if (typeof result === "string") {
-          // Ruta no válida
-          res.writeHead(400, { "Content-Type": "application/json" });
+          //if is a string, it is not valid
+          res.writeHead(400, { "Content-Type": "application/json" }); //content sent is in jason format
           res.end(JSON.stringify({ error: "Invalid endpoint" }));
         } else {
-          // Ruta válida
-          res.writeHead(200, { "Content-Type": "application/json" });
+          //in this case an object (parseTime and unixTime)
+          res.writeHead(200, { "Content-Type": "application/json" });//content sent is in jason format
           res.end(JSON.stringify(result));
         }
       } else {
@@ -223,7 +238,7 @@ export const createHttpServer = () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T19:24:20.447Z
+                at 2023-11-13T15:30:03.712Z
             </div>
         <script src="../prettify.js"></script>
         <script>
