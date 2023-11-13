@@ -22,5 +22,7 @@ exports.server = net_1.default.createServer((socket) => {
     socket.end();
 });
 exports.server.listen(port, () => {
+    let data = (0, exports.getFormatDate)();
+    console.log(data);
     console.log(`Server listening on port ${port}`);
 });
