@@ -1,16 +1,16 @@
 import { fetchData } from "../http-collect-main";
 import http from "http";
 
-jest.mock("http", () => ({
+jest.mock("http", () => ({ //mock module http
   get: jest.fn(),
 }));
 
 describe("HTTP GET Request", () => {
   it("should make an HTTP GET request and return data", async () => {
-    const mockChunks = ["test ", "data"];
+    const mockChunks = ["test ", "data"];// mockup data chunks. simulates data received from an HTTP request
     const mockResponse = {
       setEncoding: jest.fn(),
-      on: jest.fn((event, callback) => {
+      on: jest.fn((event, callback) => {//mock that simulates response events
         if (event === "data") {
           mockChunks.forEach((chunk) => callback(chunk));
         }
@@ -40,7 +40,7 @@ describe("HTTP GET Request", () => {
       }),
     };
 
-    (http.get as jest.Mock).mockImplementation((url, callback) => {
+    (http.get as jest.Mock).mockImplementation((url, callback) => { //sets mockup behaviout for hhtp.get. when calld it invokes the callback function with the mockResponse
       callback(mockResponse);
       return { on: jest.fn() };
     });
