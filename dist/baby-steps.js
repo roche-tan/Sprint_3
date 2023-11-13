@@ -1,12 +1,14 @@
 "use strict";
+/*takes the arguments and sums them*/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.processArgs = exports.babySteps = void 0;
 // (...arg) To accept an indefinite number of arguments
 const babySteps = (...args) => {
     let resultSum = 0;
     for (let i = 0; i < args.length; i++) {
-        if (args[i] !== null && args[i] !== undefined) {
-            if (typeof args[i] !== "number") {
+        const arg = args[i];
+        if (args !== null && args !== undefined) {
+            if (typeof arg !== "number" || isNaN(arg)) {
                 throw new Error("Arguments must be numbers");
             }
             resultSum += args[i];

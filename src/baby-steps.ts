@@ -1,9 +1,12 @@
+/*takes the arguments and sums them*/
+
 // (...arg) To accept an indefinite number of arguments
 export const babySteps = (...args: (number | null | undefined)[]): number => {
   let resultSum: number = 0;
   for (let i = 0; i < args.length; i++) {
-    if (args[i] !== null && args[i] !== undefined) {
-      if (typeof args[i] !== "number") {
+    const arg = args[i];
+    if (args !== null && args !== undefined) {
+      if (typeof arg !== "number" || isNaN(arg)) {
         throw new Error("Arguments must be numbers");
       }
       resultSum += args[i] as number;
