@@ -15,16 +15,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const http_client_main_1 = require("../http-client-main");
 const http_1 = __importDefault(require("http"));
 jest.mock("http", () => ({
-    get: jest.fn(),
+    get: jest.fn(), // replace get method with a jest mock function
 }));
 describe("HTTP GET Request", () => {
     it("should make an HTTP GET request and return data", () => __awaiter(void 0, void 0, void 0, function* () {
-        const mockChunks = ["test ", "data"];
+        const mockChunks = ["test ", "data"]; // mockup data chunks. simulates data received from an HTTP request
         const mockResponse = {
             setEncoding: jest.fn(),
             on: jest.fn((event, callback) => {
                 if (event === "data") {
-                    mockChunks.forEach((chunk) => callback(chunk));
+                    mockChunks.forEach((chunk) => callback(chunk)); //
                 }
                 if (event === "end") {
                     callback();
@@ -35,7 +35,7 @@ describe("HTTP GET Request", () => {
             callback(mockResponse);
             return { on: jest.fn() };
         });
-        const data = yield (0, http_client_main_1.fetchData)("http://example.com");
+        const data = yield (0, http_client_main_1.fetchData)("http://example.com"); //fetchData is called with a sample URL and test checks if returns the mock data
         expect(data).toEqual(mockChunks);
     }));
     it("should handle response error event", () => __awaiter(void 0, void 0, void 0, function* () {

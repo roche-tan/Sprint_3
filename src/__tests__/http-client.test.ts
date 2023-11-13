@@ -1,18 +1,18 @@
 import { fetchData } from "../http-client-main";
 import http from "http";
 
-jest.mock("http", () => ({
-  get: jest.fn(),
+jest.mock("http", () => ({ //mock del modulo http
+  get: jest.fn(), // replace get method with a jest mock function
 }));
 
 describe("HTTP GET Request", () => {
   it("should make an HTTP GET request and return data", async () => {
-    const mockChunks = ["test ", "data"];
-    const mockResponse = {
-      setEncoding: jest.fn(),
-      on: jest.fn((event, callback) => {
+    const mockChunks = ["test ", "data"]; // mockup data chunks. simulates data received from an HTTP request
+    const mockResponse = { //mock response object
+      setEncoding: jest.fn(), 
+      on: jest.fn((event, callback) => { //mock that simulates response events
         if (event === "data") {
-          mockChunks.forEach((chunk) => callback(chunk));
+          mockChunks.forEach((chunk) => callback(chunk)); //
         }
         if (event === "end") {
           callback();
@@ -20,12 +20,12 @@ describe("HTTP GET Request", () => {
       }),
     };
 
-    (http.get as jest.Mock).mockImplementation((url, callback) => {
+    (http.get as jest.Mock).mockImplementation((url, callback) => { //sets mockup behaviout for hhtp.get. when calld it invokes the callback function with the mockResponse
       callback(mockResponse);
       return { on: jest.fn() };
     });
 
-    const data = await fetchData("http://example.com");
+    const data = await fetchData("http://example.com"); //fetchData is called with a sample URL and test checks if returns the mock data
     expect(data).toEqual(mockChunks);
   });
 
