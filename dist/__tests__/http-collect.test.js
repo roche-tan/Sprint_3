@@ -19,7 +19,7 @@ jest.mock("http", () => ({
 }));
 describe("HTTP GET Request", () => {
     it("should make an HTTP GET request and return data", () => __awaiter(void 0, void 0, void 0, function* () {
-        const mockChunks = ["test ", "data"];
+        const mockChunks = ["test ", "data"]; // mockup data chunks. simulates data received from an HTTP request
         const mockResponse = {
             setEncoding: jest.fn(),
             on: jest.fn((event, callback) => {

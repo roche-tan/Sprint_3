@@ -35,7 +35,7 @@ describe("HTTP Uppercase Server", () => {
         server.close(); // Close the server after tests
     });
     it("should convert POST request body to uppercase", (done) => {
-        const { port } = server.address();
+        const { port } = server.address(); //server.address() returns an object containing the address information of the server
         const postData = "Hello, World!";
         const options = {
             hostname: "localhost",
@@ -44,7 +44,7 @@ describe("HTTP Uppercase Server", () => {
             method: "POST",
             headers: {
                 "Content-Type": "text/plain",
-                "Content-Length": Buffer.byteLength(postData),
+                "Content-Length": Buffer.byteLength(postData), //is setting a header in the HTTP request options
             },
         };
         const req = http.request(options, (res) => {
@@ -58,8 +58,8 @@ describe("HTTP Uppercase Server", () => {
                 done();
             });
         });
-        req.write(postData);
-        req.end();
+        req.write(postData); //This sends the postData in the body of the request.
+        req.end(); //This ends the request. 
     });
     it("should respond with 405 for non-POST methods", (done) => {
         const { port } = server.address();

@@ -14,9 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const http_json_api_server_main_1 = require("../http-json-api-server-main");
 const supertest_1 = __importDefault(require("supertest"));
-// Configura un servidor HTTP para las pruebas
+// Configs HTTP server fot the tests
 const server = (0, http_json_api_server_main_1.createHttpServer)();
-const port = 3000; // Puerto de prueba
+const port = 3000;
 beforeAll(() => {
     server.listen(port);
 });
@@ -25,11 +25,11 @@ afterAll(() => {
 });
 describe("HTTP JSON API Server Tests", () => {
     it("should respond with correct JSON for /api/parsetime", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield (0, supertest_1.default)(server)
-            .get("/api/parsetime?iso=2023-11-12T12:34:56.789Z")
+        const response = yield (0, supertest_1.default)(server) //initializes Supertest with the server under test.
+            .get("/api/parsetime?iso=2023-11-12T12:34:56.789Z") // sends a GET request to the server to the specified endpoint (/api/parsetime) with a query string containing an ISO-formatted date-time string.
             .expect(200)
-            .expect("Content-Type", /json/);
-        // Verifica que la respuesta tenga la estructura esperada
+            .expect("Content-Type", /json/); // header of the response to indicate a JSON format
+        // Verifies response to have same estrucure
         expect(response.body).toEqual({ hour: 13, minute: 34, second: 56 });
     }));
     it("should respond with correct JSON for /api/parsetime", () => __awaiter(void 0, void 0, void 0, function* () {
@@ -37,7 +37,7 @@ describe("HTTP JSON API Server Tests", () => {
             .get("/api/parsetime?iso=2023-11-12T12:34:56.789Z")
             .expect(200)
             .expect("Content-Type", /json/);
-        // Ajusta la prueba para coincidir con la hora actual del servidor (13)
+        // Addjust the test Equal to actual time in server
         expect(response.body).toEqual({ hour: 13, minute: 34, second: 56 });
     }));
     it("should respond with correct JSON for /api/unixtime", () => __awaiter(void 0, void 0, void 0, function* () {
@@ -45,7 +45,7 @@ describe("HTTP JSON API Server Tests", () => {
             .get("/api/unixtime?iso=2023-11-12T12:34:56.789Z")
             .expect(200)
             .expect("Content-Type", /json/);
-        // Verifica que la respuesta tenga la estructura esperada
+        // Verifies respone to have the same structure
         expect(response.body).toEqual({ unixtime: expect.any(Number) });
     }));
     it("should respond with 400 for invalid endpoint", () => __awaiter(void 0, void 0, void 0, function* () {
