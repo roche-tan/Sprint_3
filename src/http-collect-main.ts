@@ -9,16 +9,20 @@ export const fetchData = (url: string): Promise<string> => {
       .get(url, (response: http.IncomingMessage) => {
         let data = "";
 
-        response.on("data", (chunk: string) => {//this is triggered when a chunkk of data is received
+        response.on("data", (chunk: string) => {
+          //this is triggered when a chunkk of data is received
           data += chunk;
         });
 
-        response.on("end", () => { //is triggered when the entire response has been received.
+        response.on("end", () => {
+          //is triggered when the entire response has been received.
           console.log(data.length);
           console.log(data);
+          resolve(data);
         });
 
-        response.on("error", (error: Error) => {//If an error occurs during the response, reject of the Promise is called with the error.
+        response.on("error", (error: Error) => {
+          //If an error occurs during the response, reject of the Promise is called with the error.
           reject(error);
         });
       })

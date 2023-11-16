@@ -15,18 +15,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const http_collect_main_1 = require("../http-collect-main");
 const http_1 = __importDefault(require("http"));
 jest.mock("http", () => ({
+    //mock module http
     get: jest.fn(),
 }));
 describe("HTTP GET Request", () => {
     it("should make an HTTP GET request and return data", () => __awaiter(void 0, void 0, void 0, function* () {
-        const mockChunks = ["test ", "data"]; // mockup data chunks. simulates data received from an HTTP request
+        const mockChunks = ["test", "data"]; // mockup data chunks. simulates data received from an HTTP request
         const mockResponse = {
             setEncoding: jest.fn(),
             on: jest.fn((event, callback) => {
+                //mock that simulates response events
                 if (event === "data") {
+                    console.log("data", event);
                     mockChunks.forEach((chunk) => callback(chunk));
                 }
                 if (event === "end") {
+                    console.log("end", event);
                     callback();
                 }
             }),
@@ -36,7 +40,7 @@ describe("HTTP GET Request", () => {
             return { on: jest.fn() };
         });
         const data = yield (0, http_collect_main_1.fetchData)("http://example.com");
-        expect(data).toEqual(mockChunks);
+        expect(data).toEqual("testdata");
     }));
     it("should handle response error event", () => __awaiter(void 0, void 0, void 0, function* () {
         const mockError = new Error("Test response error");
@@ -49,6 +53,7 @@ describe("HTTP GET Request", () => {
             }),
         };
         http_1.default.get.mockImplementation((url, callback) => {
+            //sets mockup behaviout for hhtp.get. when calld it invokes the callback function with the mockResponse
             callback(mockResponse);
             return { on: jest.fn() };
         });
