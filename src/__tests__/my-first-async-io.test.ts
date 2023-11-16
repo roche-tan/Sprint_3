@@ -1,20 +1,30 @@
 import countLinesAsync from "../my-first-async-io";
-import path from "path";
+import { promises as fsPromises } from "fs";
+
+jest.mock('fs', () => {
+  return {
+    promises: {
+      readFile: jest.fn().mockImplementation(() => {
+        return Promise.resolve(Buffer.from("Line1\nLine2\nLine3\n"));
+      }),
+    },
+  };
+});
 
 describe("countLinesAsync", () => {
   it("counts the number of lines in a file", async () => {
-    const filePath = path.join(__dirname, "testfile.txt"); //__dirname is a global cariable that represents a directory name of the current module
-    console.log(filePath);
-    const lineCount = await countLinesAsync(filePath);
-
-    //lines of text in the file
+    const filename = "test.txt";
+    const lineCount = await countLinesAsync(filename);
     expect(lineCount).toBe(3);
   });
 
   it("throws an error when the file cannot be read", async () => {
-    const filePath = path.join(__dirname, "nonexistent.txt");
+    // Mocking readFile to reject with an error
+    (fsPromises.readFile as jest.Mock).mockImplementation(() => {
+      return Promise.reject(new Error("File not found"));
+    });
 
-    // waits to throw an exception when the file does not exist
-    await expect(countLinesAsync(filePath)).rejects.toThrow();
+    const filename = "nonexistent.txt";
+    await expect(countLinesAsync(filename)).rejects.toThrow("File not found");
   });
 });

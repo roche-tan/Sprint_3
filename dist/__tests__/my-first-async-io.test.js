@@ -13,18 +13,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const my_first_async_io_1 = __importDefault(require("../my-first-async-io"));
-const path_1 = __importDefault(require("path"));
+const fs_1 = require("fs");
+jest.mock('fs', () => {
+    return {
+        promises: {
+            readFile: jest.fn().mockImplementation(() => {
+                return Promise.resolve(Buffer.from("Line1\nLine2\nLine3\n"));
+            }),
+        },
+    };
+});
 describe("countLinesAsync", () => {
     it("counts the number of lines in a file", () => __awaiter(void 0, void 0, void 0, function* () {
-        const filePath = path_1.default.join(__dirname, "testfile.txt"); //__dirname is a global cariable that represents a directory name of the current module
-        console.log(filePath);
-        const lineCount = yield (0, my_first_async_io_1.default)(filePath);
-        //lines of text in the file
+        const filename = "test.txt";
+        const lineCount = yield (0, my_first_async_io_1.default)(filename);
         expect(lineCount).toBe(3);
     }));
     it("throws an error when the file cannot be read", () => __awaiter(void 0, void 0, void 0, function* () {
-        const filePath = path_1.default.join(__dirname, "nonexistent.txt");
-        // waits to throw an exception when the file does not exist
-        yield expect((0, my_first_async_io_1.default)(filePath)).rejects.toThrow();
+        // Mocking readFile to reject with an error
+        fs_1.promises.readFile.mockImplementation(() => {
+            return Promise.reject(new Error("File not found"));
+        });
+        const filename = "nonexistent.txt";
+        yield expect((0, my_first_async_io_1.default)(filename)).rejects.toThrow("File not found");
     }));
 });

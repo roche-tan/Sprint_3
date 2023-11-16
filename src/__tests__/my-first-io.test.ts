@@ -1,5 +1,4 @@
 import countLines from "../my-first-io";
-
 // Mock fs module
 jest.mock("fs", () => {
   //mock file with 3 lines
