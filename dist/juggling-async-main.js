@@ -29,11 +29,13 @@ const fetchData = (urls) => {
                     }
                 });
                 response.on("error", (error) => {
+                    console.error("Network error: ", error);
                     reject(error);
                 });
             })
                 .on("error", (error) => {
                 console.error("Request error: ", error);
+                reject(error);
             });
         });
     });

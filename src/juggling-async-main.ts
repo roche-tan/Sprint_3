@@ -1,4 +1,5 @@
 import http from "http";
+
 export const fetchData = (urls: string[]): Promise<string[]> => {
   //Save the possition of each url
   let results: string[] = new Array(urls.length); //urls.length ensures that the results array will have the same length as urls.
@@ -10,7 +11,7 @@ export const fetchData = (urls: string[]): Promise<string[]> => {
     urls.forEach((url, index) => {
       //loop to iterate in each url
       http
-        .get(url, (response) => {
+        .get(url, (response: http.IncomingMessage) => {
           let data = "";
 
           response.on("data", (chunk: string) => {
@@ -27,11 +28,13 @@ export const fetchData = (urls: string[]): Promise<string[]> => {
             }
           });
           response.on("error", (error: Error) => {
+            console.error("Network error: ", error);
             reject(error);
           });
         })
         .on("error", (error: Error) => {
           console.error("Request error: ", error);
+          reject(error);
         });
     });
   });

@@ -20,6 +20,7 @@ jest.mock("http", () => ({
 describe("fetchData", () => {
     beforeEach(() => {
         http_1.default.get.mockImplementation((url, callback) => {
+            //mockImplementation jest method that is used to define a personalized implmentation to a mock function
             const mockResponse = {
                 on: jest.fn((event, handler) => {
                     if (event === "data") {
@@ -40,18 +41,19 @@ describe("fetchData", () => {
         expect(data).toEqual(["some data", "some data"]);
     }));
     it("should handle errors in HTTP requests", () => __awaiter(void 0, void 0, void 0, function* () {
-        http_1.default.get.mockImplementationOnce((url, callback) => {
+        const mockNetworkError = new Error("Test network error");
+        http_1.default.get.mockImplementationOnce(() => {
             const mockRequest = {
-                on: jest.fn((event, handler) => {
+                on: jest.fn((event, callback) => {
                     if (event === "error") {
-                        handler(new Error("Network error"));
+                        callback(mockNetworkError);
                     }
                 }),
             };
             return mockRequest;
         });
         const urls = ["http://example.com/1"];
-        yield expect((0, juggling_async_main_1.fetchData)(urls)).rejects.toThrow("Network error");
+        yield expect((0, juggling_async_main_1.fetchData)(urls)).rejects.toThrow("Test network error");
     }));
     it("should handle errors in HTTP response", () => __awaiter(void 0, void 0, void 0, function* () {
         http_1.default.get.mockImplementationOnce((url, callback) => {

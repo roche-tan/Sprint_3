@@ -7,7 +7,8 @@ jest.mock("http", () => ({
 
 describe("fetchData", () => {
   beforeEach(() => {
-    (http.get as jest.Mock).mockImplementation((url, callback) => { //mockImplementation jest method that is used to define a personalized implmentation to a mock function
+    (http.get as jest.Mock).mockImplementation((url, callback) => {
+      //mockImplementation jest method that is used to define a personalized implmentation to a mock function
       const mockResponse = {
         on: jest.fn((event, handler) => {
           if (event === "data") {
@@ -27,15 +28,16 @@ describe("fetchData", () => {
   it("should accumulate data from multiple URLs", async () => {
     const urls = ["http://example.com/1", "http://example.com/2"];
     const data = await fetchData(urls);
-    expect(data).toEqual(["some data", "some data"]); 
+    expect(data).toEqual(["some data", "some data"]);
   });
 
   it("should handle errors in HTTP requests", async () => {
-    (http.get as jest.Mock).mockImplementationOnce((url, callback) => {
+    const mockNetworkError = new Error("Test network error");
+    (http.get as jest.Mock).mockImplementationOnce(() => {
       const mockRequest = {
-        on: jest.fn((event, handler) => {
+        on: jest.fn((event, callback) => {
           if (event === "error") {
-            handler(new Error("Network error"));
+            callback(mockNetworkError);
           }
         }),
       };
@@ -43,8 +45,9 @@ describe("fetchData", () => {
     });
 
     const urls = ["http://example.com/1"];
-    await expect(fetchData(urls)).rejects.toThrow("Network error");
+    await expect(fetchData(urls)).rejects.toThrow("Test network error");
   });
+
   it("should handle errors in HTTP response", async () => {
     (http.get as jest.Mock).mockImplementationOnce((url, callback) => {
       const mockResponse = {
